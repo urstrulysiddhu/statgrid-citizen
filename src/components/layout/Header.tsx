@@ -1,13 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Bell, User, LogOut } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
 import statgridLogo from "@/assets/statgrid-logo.png";
 
-interface HeaderProps {
-  userType?: 'government' | 'public' | null;
-}
+export const Header = () => {
+  const { user, logout } = useAuth();
 
-export const Header = ({ userType }: HeaderProps) => {
+  const handleLogout = () => {
+    logout();
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -22,11 +25,14 @@ export const Header = ({ userType }: HeaderProps) => {
 
         {/* Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <Link to="/services" className="text-foreground hover:text-primary transition-colors">
+          <a href="#" className="text-foreground hover:text-primary transition-colors">
             Services
-          </Link>
-          <Link to="/updates" className="text-foreground hover:text-primary transition-colors">
+          </a>
+          <a href="#" className="text-foreground hover:text-primary transition-colors">
             Updates
+          </a>
+          <Link to="/about" className="text-foreground hover:text-primary transition-colors">
+            About
           </Link>
           <Link to="/contact" className="text-foreground hover:text-primary transition-colors">
             Contact
@@ -35,7 +41,7 @@ export const Header = ({ userType }: HeaderProps) => {
 
         {/* User Actions */}
         <div className="flex items-center space-x-4">
-          {userType ? (
+          {user ? (
             <>
               <Button variant="ghost" size="icon" className="relative">
                 <Bell className="h-5 w-5" />
@@ -44,7 +50,7 @@ export const Header = ({ userType }: HeaderProps) => {
               <Button variant="ghost" size="icon">
                 <User className="h-5 w-5" />
               </Button>
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" onClick={handleLogout}>
                 <LogOut className="h-4 w-4 mr-2" />
                 Logout
               </Button>
@@ -53,9 +59,6 @@ export const Header = ({ userType }: HeaderProps) => {
             <div className="flex items-center space-x-2">
               <Button variant="outline" size="sm" asChild>
                 <Link to="/login">Login</Link>
-              </Button>
-              <Button size="sm" asChild>
-                <Link to="/register">Register</Link>
               </Button>
             </div>
           )}

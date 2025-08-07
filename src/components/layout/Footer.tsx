@@ -27,19 +27,19 @@ export const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/services" className="text-white/80 hover:text-white transition-colors">
+                <a href="#" className="text-white/80 hover:text-white transition-colors">
                   All Services
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/updates" className="text-white/80 hover:text-white transition-colors">
+                <a href="#" className="text-white/80 hover:text-white transition-colors">
                   Live Updates
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/notices" className="text-white/80 hover:text-white transition-colors">
+                <a href="#" className="text-white/80 hover:text-white transition-colors">
                   Public Notices
-                </Link>
+                </a>
               </li>
               <li>
                 <Link to="/contact" className="text-white/80 hover:text-white transition-colors">
@@ -98,13 +98,13 @@ export const Footer = () => {
               </div>
               <div className="flex items-center space-x-2 text-white/80">
                 <Mail className="h-4 w-4" />
-                <span>support@statgrid.gov.in</span>
+                <span>support@statgrid.telangana.gov.in</span>
               </div>
               <div className="flex items-start space-x-2 text-white/80">
                 <MapPin className="h-4 w-4 mt-0.5" />
                 <span>
-                  GHMC Head Office<br />
-                  Hyderabad, Telangana 500004
+                  Secretariat Building<br />
+                  Hyderabad, Telangana 500022
                 </span>
               </div>
             </div>
@@ -117,9 +117,17 @@ export const Footer = () => {
             <p className="text-white/80 text-sm">
               © 2024 StatGrid - Government of Telangana. All rights reserved.
             </p>
-            <p className="text-white/80 text-sm">
-              Part of Digital India Initiative
-            </p>
+            <div className="flex space-x-4 text-sm">
+              <Link to="/about" className="text-white/80 hover:text-white transition-colors">
+                About Us
+              </Link>
+              <Link to="/privacy" className="text-white/80 hover:text-white transition-colors">
+                Privacy
+              </Link>
+              <Link to="/terms" className="text-white/80 hover:text-white transition-colors">
+                Terms
+              </Link>
+            </div>
           </div>
         </div>
       </div>
