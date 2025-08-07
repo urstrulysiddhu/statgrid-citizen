@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					hover: 'hsl(var(--primary-hover))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -52,6 +53,24 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					foreground: 'hsl(var(--warning-foreground))'
+				},
+				govt: {
+					primary: 'hsl(var(--govt-primary))',
+					secondary: 'hsl(var(--govt-secondary))',
+					accent: 'hsl(var(--govt-accent))'
+				},
+				public: {
+					primary: 'hsl(var(--public-primary))',
+					secondary: 'hsl(var(--public-secondary))',
+					accent: 'hsl(var(--public-accent))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -62,6 +81,15 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			backgroundImage: {
+				'gradient-govt': 'var(--gradient-govt)',
+				'gradient-public': 'var(--gradient-public)',
+				'gradient-hero': 'var(--gradient-hero)'
+			},
+			boxShadow: {
+				'govt': 'var(--shadow-govt)',
+				'public': 'var(--shadow-public)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
